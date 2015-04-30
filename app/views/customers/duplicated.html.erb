@@ -1,0 +1,22 @@
+<h2>Customers with more than one address</h2>
+<table class="pretty">
+  <tr>
+    <th>Phone</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Customer Since</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+  <tr>
+    <td class="phone"><%= phone(customer.phone) %></td>
+    <td class="name"><%= capitalize(customer.name) %></td>
+    <td class="address"><%= capitalize(customer.address) %></td>
+    <td class="datetime"><%= date(customer.created_at) %></td>
+    <td><%= link_to 'Delete', customer_path(customer, :duplicated => true), :confirm => "Are you sure to delete Customer #{customer.id}?", :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @customers %>

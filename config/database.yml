@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  database: droutes_dev
+  user: dev_user
+  password: dev

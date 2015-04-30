@@ -1,0 +1,22 @@
+<table class="pretty">
+  <tr>
+    <th>ID</th>
+    <th>Status</th>
+    <th>Total</th>
+    <th>Instruction</th>
+    <th>Order Time</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @orders.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td><%= order.order_status %></td>
+    <td><%= number_to_currency order.total  %></td>
+    <td><%= order.instruction %></td>
+    <td><%= datetime order.updated_at  %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @orders %>

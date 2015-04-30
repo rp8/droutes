@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  phone: MyString
+  address: MyString
+  orders_per_page: 1
+  customers_per_page: 1
+
+two:
+  phone: MyString
+  address: MyString
+  orders_per_page: 1
+  customers_per_page: 1

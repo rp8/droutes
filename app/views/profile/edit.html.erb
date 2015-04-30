@@ -1,0 +1,20 @@
+<% if @profile.new_record? %>
+  <h2>Editing New Profile</h2>
+<% else %>
+  <h2>Editing Profile</h2>
+<% end %>
+
+<%= form_for(@profile, :url => '/profile/update', :method => :put) do |f| %>
+  <%= render "shared/error_messages", :target => @profile %>
+  <%= f.label :phone, "Phone#{mark_required(@profile, :phone)}" %>:
+  <%= f.telephone_field :phone, :size => 15 %><br/>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br/>
+  <%= f.label :address, "Address#{mark_required(@profile, :address)}" %>:
+  <%= f.text_field :address, :size => 120 %><br/>
+  <%= f.label :orders_per_page %>:
+  <%= f.text_field :orders_per_page %><br/>
+  <%= f.label :customers_per_page %>:
+  <%= f.text_field :customers_per_page %><br/>
+  <%= f.submit %>
+<% end %>

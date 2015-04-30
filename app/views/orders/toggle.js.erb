@@ -1,0 +1,1 @@
+$('#status_<%= @order.id %>').html('<%= link_to @order.order_status, order_toggle_path(@order), :method => :put, :remote => true %>');

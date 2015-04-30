@@ -1,0 +1,33 @@
+<table class="pretty">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Status</th>
+    <th>Phone</th>
+    <th>Total</th>
+    <th>Instruction</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Order Time</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td><div id='<%= "status_#{order.id}" %>'><%= link_to order.order_status, order_toggle_path(order), :method => :put, :remote => true %></div></td>
+    <td><%= phone order.phone %></td>
+    <td><%= number_to_currency order.total  %></td>
+    <td><%= order.instruction %></td>
+    <td><%= capitalize order.name %></td>
+    <td><%= direction_for order %></td>
+    <td><%= time order.updated_at  %></td>
+    <td>
+      <%= link_to 'Edit', edit_order_path(order), :remote => true %>
+      <%= link_to 'History', customer_path(order.customer_id) %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

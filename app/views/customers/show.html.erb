@@ -1,0 +1,14 @@
+<div id="notice" class="notice"></div>
+
+<h2>Customer Info & Order History</h2>
+<label><%= link_to 'Edit', edit_customer_path(@customer) %></label>
+<label>Phone: <%= phone(@customer.phone) %></label>
+<label>Name: <%= capitalize(@customer.name) %></label>
+<label>Address: <%= direction_to @customer %></label>
+<label>Note: <%= @customer.note %></label>
+<hr />
+<%= link_to 'New Order', new_order_path(:customer_id => @customer), :remote => true %></td>
+<div id="neworder"></div>
+<h2>Recent Orders</h2>
+<div id="recentorders"><%= render 'orders' %></div>
+

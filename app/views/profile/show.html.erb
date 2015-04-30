@@ -1,0 +1,16 @@
+<h2>Profile</h2>
+Email: <%= @profile.user.email %>
+<%= link_to 'Edit', '/profile/edit' %>
+<br/>
+Name: <%= @profile.name %>
+<br/>
+Phone: <%= phone(@profile.phone) %>
+<br />
+Address: <%= capitalize(@profile.address) %>
+<br />
+Orders Per Page: <%= @profile.orders_per_page %>
+<br />
+Customers Per Page: <%= @profile.customers_per_page %>
+<br />
+
+

@@ -1,0 +1,14 @@
+$('#map').html("<a id='gmap' target='_map' href='<%= direction_to @order.customer %>'>click</a>");
+var g = document.getElementById('gmap');
+if (g.click)
+{
+  g.click();
+}
+else if(document.createEvent)
+{
+  var e = document.createEvent('MouseEvents');
+  e.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+  var r = g.dispatchEvent(e);
+}
+
+

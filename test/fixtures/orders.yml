@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  status: MyString
+  type: MyString
+  instruction: MyText
+  total: 9.99
+
+two:
+  status: MyString
+  type: MyString
+  instruction: MyText
+  total: 9.99

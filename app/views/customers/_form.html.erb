@@ -1,0 +1,42 @@
+<% if @customer.new_record? %>
+  <h2>Entering New Customer</h2>
+<% else %>
+  <h2>Editing Customer</h2>
+<% end %>
+
+<%= form_for(@customer) do |f| %>
+  <%= render "shared/error_messages", :target => @customer %>
+  <div id="newcustomermap"></div>
+
+  <table class="pretty">
+    <tr>
+      <td><%= f.label :phone, "Phone#{mark_required(@customer, :phone)}" %></td>
+      <td><%= f.text_field :phone, :size => 10 %></td>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name, :size => 30 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :address, "Address#{mark_required(@customer, :address)}" %></td>
+      <td colspan=3><%= f.text_field :address, :size => 56 %></td>
+      <td>
+        << Copy verified address back here
+        <a id='direction' href='' data-href='<%= direction_href %>' target='_map'>Verify Direction</a>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.label :note %></td>
+      <td colspan=3><%= f.text_field :note, :size => 56 %></td>
+    </tr>
+    <% if @customer.new_record? %>
+    <tr>
+      <td>Instruction</td>
+      <td colspan=3><%= text_field_tag 'instruction', '', :size => 56 %></td>
+      <td>Total <%= text_field_tag 'total', '0.00', :size => 2 %></td>
+      <td>
+        Order? <%= check_box_tag 'order', 'true', @customer.new_record? %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+  <%= f.submit %>
+<% end %>

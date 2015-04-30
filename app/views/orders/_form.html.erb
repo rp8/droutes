@@ -1,0 +1,40 @@
+<% if @order.new_record? %>
+  <h2>Entering New Order</h2>
+<% else %>
+  <h2>Editing Order <%= @order.id %></h2>
+<% end %>
+
+<%= form_for(@order, :remote => true) do |f| %>
+  <%= render "shared/error_messages", :target => @order %>
+
+  <table class="pretty">
+    <tr>
+      <td><%= f.label :phone %></td>
+      <td><%= f.text_field :phone, :size => 15 %></td>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name, :size => 25 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :address %></td>
+      <td colspan=3><%= f.text_field :address, :size => 53 %></td>
+    </tr>
+
+    <%= f.hidden_field :customer_id %>
+
+    <% unless @order.new_record? %>
+    <tr>
+      <td><%= f.label 'Status' %></td>
+      <td><%= f.select :order_status, options_for_select(['NEW','DONE'], :selected => @order.order_status) %></td>
+    </tr>
+    <% end %>
+
+    <tr>
+      <td><%= f.label 'Total'  %></td>
+      <td><%= f.text_field :total, :size => 4 %></td>
+      <td><%= f.label 'Instruction'  %></td>
+      <td><%= f.text_field :instruction, :size => 25 %></td>
+      <td><%= f.submit %></td>
+    </tr>
+
+  </table>
+<% end %>

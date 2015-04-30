@@ -1,0 +1,33 @@
+<% profile = @user.profile %>
+<h2><%= @user.email %> Profile </h2>
+<table class="pretty">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Sign Ins</th>
+    <th>Current Sign In</th>
+    <th>Last Sign In</th>
+    <th>Current IP</th>
+    <th>Last IP</th>
+    <th>User Since</th>
+  </tr>
+  <tr>
+   <td><%= profile.name %></td>
+   <td><%= phone profile.phone  %></td>
+   <td><%= @user.sign_in_count %></td>
+   <td><%= datetime @user.current_sign_in_at  %></td>
+   <td><%= datetime @user.last_sign_in_at  %></td>
+   <td><%= @user.current_sign_in_ip %></td>
+   <td><%= @user.last_sign_in_ip %></td>
+   <td><%= date @user.created_at  %></td>
+  </tr>
+</table>
+
+<br />
+Orders: <%= link_to "#{@user.orders.count}", "#{@user.id}/orders", :remote => true %>
+Customers: <%= link_to "#{@user.customers.count}", "#{@user.id}/customers", :remote => true %>
+
+<div id="recentorders"></div>
+
+<div id="recentcustomers"></div>
+

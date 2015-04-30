@@ -1,0 +1,22 @@
+<h2>Recent Customers</h2>
+<% if @customers and @customers.size > 0 %>
+<table class="pretty">
+  <tr>
+    <th>Phone</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Customer Since</th>
+    <th>History</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+  <tr>
+    <td class="phone"><%= phone customer.phone  %></td>
+    <td class="name"><%= capitalize customer.name  %></td>
+    <td class="address"><%= capitalize customer.address  %></td>
+    <td class="datetime"><%= date customer.created_at  %></td>
+    <td><%= link_to '...', customer %></td>
+  </tr>
+  <% end %>
+</table>
+<% end %>

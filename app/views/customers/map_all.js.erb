@@ -1,0 +1,11 @@
+if (GBrowserIsCompatible()) {
+  $.getJSON("/customers", function(json) {
+    if (jason.length > 0) {
+      for (i=0; i<json.length; i++) {
+        var cust = json[i];
+        addCustomer(cust);
+      }  
+    }
+   }
+  );
+}

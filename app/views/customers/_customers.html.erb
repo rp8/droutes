@@ -1,0 +1,30 @@
+* If an address does not show up in map, click Edit Customer to verify it.
+<% if @customers.size > 0 %>
+<table class="pretty">
+  <tr>
+    <th>Order</th>
+    <th>Phone</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Customer Since</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+  <tr>
+    <td><%= link_to 'Order', new_order_path(:customer_id => customer), :remote => true %></td>
+    <td class="phone"><%= phone customer.phone %></td>
+    <td class="name"><%= capitalize customer.name %></td>
+    <td class="address"><%= direction_to customer %></td>
+    <td class="datetime"><%= date customer.created_at  %></td>
+    <td>
+      <%= link_to 'Edit Customer', edit_customer_path(customer), :remote => true %>
+      <%= link_to 'History', customer %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+  No customer found. Click New Customer to enter address.
+<% end %>
+

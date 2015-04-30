@@ -1,0 +1,153 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+ font-family: verdana, arial, helvetica, sans-serif;
+ font-size:   1.0em;
+ line-height: 1.0em;
+}
+
+p {
+  margin: 2px;
+}
+
+pre {
+ background-color: #eee;
+ padding: 10px;
+}
+
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+a:link { text-decoration: none; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+.notice {
+  color: darkgreen;
+}
+
+.alert {
+  color: red;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+   width: 450px;
+   border: 2px solid red;
+   padding: 7px;
+   padding-bottom: 0;
+   margin-bottom: 20px;
+   background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation ul li {
+  font-size: 1.0em;
+  list-style: square;
+}
+
+h2 {
+ padding: 2px;
+ margin: 0px;
+ font-size: 1.0em;
+ border-bottom: 1px solid #eee;
+}
+
+.pagination {
+}
+
+#header {
+  background: #eee;
+  height: 15px;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+
+#menu {
+  float: left;
+  padding: 2px;
+}
+
+#settings {
+  float: right;
+  margin-right: 10px;
+}
+
+#main {
+  float: left;
+}
+
+#ads {
+  float: right;
+  padding: 2px;
+  width: 200px;
+}
+
+.pretty {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana;
+  text-align: left;
+}
+
+.pretty caption {
+  caption-side: bottom;
+  font-style: italic;
+  text-align: right;
+  padding: 0.5em 0;
+}
+
+.pretty th
+{
+  color: #759f29;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #000000;
+}
+
+.pretty td
+{
+  color: #669;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.pretty tr:hover td {
+  background-color: #f4ffa0;
+  color: #000;
+}
+
+#newcustomer {
+  background-color: #f4ffd6;
+}
+
+#editcustomer {
+  background-color: #f4ffd6;
+}
+
+#neworder {
+  background-color: #f4ffd6;
+}
+
+#editorder {
+  background-color: #f4ffd6;
+}

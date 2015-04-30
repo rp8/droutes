@@ -1,0 +1,26 @@
+<h2>Recent Orders</h2>
+<table class="pretty">
+  <tr>
+    <th>ID</th>
+    <th>Status</th>
+    <th>Phone</th>
+    <th>Total</th>
+    <th>Instruction</th>
+    <th>Address</th>
+    <th>Time</th>
+  </tr>
+
+  <% @orders.each do |order| %>
+  <tr>
+    <td><%= order.id %></td>
+    <td><%= order.order_status %></td>
+    <td><%= phone order.phone %></td>
+    <td><%= number_to_currency order.total  %></td>
+    <td><%= order.instruction %></td>
+    <td><%= capitalize order.address %></td>
+    <td><%= datetime order.updated_at  %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @orders %>

@@ -1,0 +1,11 @@
+Status:
+<%= @order.order_status %>
+Date:
+<%= @order.updated_at.strftime('%Y-%m-%d %I:%M %p') %>
+Phone:
+<%= phone(@order.customer.phone) %>
+Name: 
+<%= @order.customer.name.capitalize %>
+
+<%= link_to 'Edit', edit_order_path(@order) %>
+<%= link_to 'Delete', order, :confirm => 'Are you sure?', :method => :delete %>

@@ -1,0 +1,5 @@
+sudo cp -R app /home/www/droutes
+sudo cp -R public /home/www/droutes 
+sudo cp -R db /home/www/droutes
+sudo cp Gemfile /home/www/droutes
+sudo cp config/routes.rb /home/www/droutes/config
